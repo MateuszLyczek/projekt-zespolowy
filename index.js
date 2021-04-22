@@ -32,8 +32,8 @@ app.use("/static", express.static("public"));
 //CONNECT TO DATABASE
 mongoose.set("useFindAndModify", false);
 
-mongoose.connect('mongodb+srv://yoda:yoda@cluster0.g2qbi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', { useNewUrlParser: true }, () => {
-    console.log("Polaczony z db!");
+mongoose.connect('mongodb+srv://yoda:yoda@cluster0.g2qbi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true }, () => {
+    //console.log("Polaczony z db!");
     app.listen(process.env.PORT || 3000, () => console.log("Dzialam na 3000!"));
 });
 

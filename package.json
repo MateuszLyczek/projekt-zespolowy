@@ -4,11 +4,14 @@
   "description": "Zaliczenie przedmiotu \"Projekt zespołowy\"",
   "main": "index.js",
   "scripts": {
-    "test": "cross-env NODE_ENV=development jest"
+    "test": "cross-env NODE_ENV=development jest --detectOpenHandles --forceExit"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rawskiWSB/Projekt-grupowy.git"
+  },
+  "Jest": {
+    "preset": "@shelf/jest-mongodb"
   },
   "keywords": [
     "projekt",
@@ -21,6 +24,7 @@
   },
   "homepage": "https://github.com/rawskiWSB/Projekt-grupowy#readme",
   "dependencies": {
+    "@shelf/jest-mongodb": "^1.2.4",
     "bcrypt": "^5.0.1",
     "body-parser": "^1.19.0",
     "config": "^3.3.6",
