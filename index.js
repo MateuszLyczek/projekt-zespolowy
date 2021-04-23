@@ -11,9 +11,10 @@ const mongoose = require("mongoose");
 const usersDb = require("./models/users");
 const Parser = require('rss-parser')
 const mjml2html = require('mjml')
+const MAIL_GUN_HOST = "Domena.com";
 const API_KEY = "9c75cfb366315a27c5c3c184e8a34669-a09d6718-e2b9d41f";
 const DOMAIN = "sandboxe383140efd664ed3b5cfaf1bda681e98.mailgun.org";
-const mailgun = require('mailgun-js')({apiKey: API_KEY, domain: DOMAIN});
+const mailgun = require('mailgun-js')({apiKey: '9c75cfb366315a27c5c3c184e8a34669-a09d6718-e2b9d41f', domain: 'sandboxe383140efd664ed3b5cfaf1bda681e98.mailgun.org'});
 
 
 

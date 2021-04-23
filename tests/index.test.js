@@ -34,7 +34,6 @@ describe('Test the register path', () =>{
 });
 
 const {MongoClient} = require('mongodb');
-
 describe('Test the database insert, update and delete command', () => {
     let connection;
     let db;
@@ -105,4 +104,29 @@ describe('Test the database insert, update and delete command', () => {
         connection.disconnect()
 
     });
+});
+
+const mailgun = require('mailgun-js')
+const mockSend = jest.fn(() => Promise.resolve());
+
+jest.mock('mailgun-js', () => {
+    return jest.fn(() => ({
+        messages: () => ({
+            send: mockSend
+        })
+    }))
+})
+
+test('test', () => {
+    //const add = require('app');
+    expect(mailgun).toHaveBeenCalledTimes(1)
+    expect(mailgun).toHaveBeenCalledWith({
+        apiKey: process.env.API_KEY,
+        domain: process.env.DOMAIN,
+        host: process.env.MAIL_GUN_HOST
+    });
+
+    const data = {foo: 'bar'};
+    add(data);
+    expect(mockSend).toHaveBeenCalledWith(data);
 });

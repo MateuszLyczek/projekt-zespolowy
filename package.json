@@ -4,7 +4,7 @@
   "description": "Zaliczenie przedmiotu \"Projekt zespołowy\"",
   "main": "index.js",
   "scripts": {
-    "test": "cross-env NODE_ENV=development jest --detectOpenHandles --forceExit"
+    "test": "cross-env NODE_ENV=development jest --detectOpenHandles --forceExit --testEnvironment=node"
   },
   "repository": {
     "type": "git",
@@ -33,6 +33,7 @@
     "jade": "^0.31.2",
     "jest": "^26.6.3",
     "jsdom": "^16.5.3",
+    "logger": "^0.0.1",
     "mailgun-js": "^0.22.0",
     "mailgun.js": "^3.3.0",
     "mjml": "^4.9.0",
